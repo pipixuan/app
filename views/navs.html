@@ -1,0 +1,20 @@
+<!-- 侧边导航 -->
+<div ng-class="{navs: true, collapse: collapsed}">
+	<dl>
+		<dt class="login">
+			<div class="avatar">
+				<img src="./public/images/avatar.png" alt="">
+			</div>
+			<span>登录</span>
+		</dt>
+		<dd ng-class="{active: $first}" ng-click="toggle($index)" ng-repeat="nav in navs">
+			<a href="{{ nav.url }}" class="{{ nav.icon }}">
+				<span>{{ nav.text }}</span>
+			</a>
+		</dd>
+	</dl>
+	<div class="extra">
+		<a href="javascript:;" class="icon-image">夜晚</a>
+		<a href="javascript:;" class="icon-download">离线</a>
+	</div>
+</div>

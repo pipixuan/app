@@ -1,0 +1,6 @@
+
+#Mac系统文件
+.DS_Store
+
+#bower目录
+/**/bower_components/**

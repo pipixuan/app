@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>豆瓣一刻</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet/less" href="./public/less/main.less">
+	<script src="./public/libs/less.js"></script>
+	<script src="./bower_components/angular/angular.js"></script>
+	<script src="./bower_components/angular-route/angular-route.js"></script>
+	<script src="./bower_components/angular-animate/angular-animate.js"></script>
+	<script src="./scripts/app.js"></script>
+	<script src="./scripts/controllers.js"></script>
+	<script src="./scripts/directives.js"></script>
+	<script src="./scripts/services.js"></script>
+</head>
+<body>
+	<div class="viewport">
+		<!-- 侧边导航 -->
+		<div ng-include="'./views/navs.html'" ng-controller="NavsController"></div>
+		<div class="container">
+			<!-- 头部 -->
+			<div ng-class="{header: true, collapse: collapsed}">
+				<a href="javascript:;" ng-click="toggle()" class="menu icon-menu"></a>
+				<h2>{{title}}</h2>
+				<a href="javascript:;" class="search icon-search"></a>
+			</div>
+			<!-- 主体 -->
+			<div ng-class="{body: true, collapse: collapsed}">
+				<div yk-loading ng-if="!loaded" class="loading" ng-src="./public/images/loading.gif"></div>
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
